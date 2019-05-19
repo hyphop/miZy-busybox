@@ -1,2 +1,3 @@
 language: c
-script:  sudo ./prepare && sudo ./build
+script:  ./prepare && ./build && ./pack && ./show
+

@@ -1,4 +1,5 @@
-# miZy busybox 
+# miZy busybox [![Build Status](https://travis-ci.com/hyphop/miZy-busybox.svg?branch=master)](https://travis-ci.com/hyphop/miZy-busybox)
+
 
 ## About
 
