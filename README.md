@@ -1,10 +1,11 @@
 # miZy busybox 
 
-## ABOUT 
+## About
 
-    busybox cross-compilation example
+    busybox cross-compilation example. We create standalone busybox and create 
+    minimal rootfs, prepare and pack for booting.
 
-## install / get sources
+## Get sources, Install
 
 ```
     cd /tmp
@@ -14,18 +15,28 @@
     cd miZy-busybox
 ```
 
-## USAGE
+## Build, Compile, Pack
 
     ./prepare
     ./build
+    ./pack
 
-## CUSTOM
+## Custom
 
     ./build menuconfig
     ./build installl
 
-## GET && BUILD
+## additional info
 
++ https://github.com/hyphop/miZy - related project
++ https://en.wikipedia.org/wiki/Musl - read about musl
+
+## Support Us / Donate
+
+this material created for free usage, but author have spend a some time for write it
+, and be happy get some feedback as donation from u ) ....
+
++ https://hyphop.github.io/donate/
 
 ## AUTHOR
 
