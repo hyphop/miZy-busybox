@@ -41,6 +41,7 @@
 
 + https://github.com/hyphop/miZy - related project
 + https://en.wikipedia.org/wiki/Musl - read about musl
++ https://travis-ci.com/hyphop/miZy-busybox - check building status for this subj
 
 ## Support Us / Donate
 

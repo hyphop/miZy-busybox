@@ -12,5 +12,5 @@ WDIR=/tmp/mizy-busybox
 BDIR="$WDIR/$NAME"
 SRV=https://www.busybox.net/downloads/
 SRC="$SRV$PKG"
-CDIR="$ZDIR/$GIT"
+CDIR="$PWD"
 LOG=log

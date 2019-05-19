@@ -10,6 +10,7 @@
 [ -p "$WDIR" ] || mkdir -p $WDIR
 [ -p "$LOG" ] || mkdir -p $LOG
 
+echo "[i] current dir $CDIR, working dir $WDIR">&2
 
 cd $WDIR
 
