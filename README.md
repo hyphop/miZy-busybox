@@ -32,6 +32,11 @@
 
     wget https://raw.githubusercontent.com/hyphop/miZy-busybox/master/make_it_easy -O- | sh -
 
+## Requires
+
++ squashfs-tools ( apt-get install squashfs-tools )
++ ...
+
 ## additional info
 
 + https://github.com/hyphop/miZy - related project
