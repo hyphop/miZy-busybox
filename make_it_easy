@@ -26,6 +26,8 @@ set -e
 ./build -j 8 
 ./build install
 ./pack
+#COMP=lzma ./pack
+#COMP=gzip ./pack
 
 echo "[i] ok its ready">&2
 
