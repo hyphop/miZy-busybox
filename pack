@@ -24,6 +24,10 @@ ROOTFS_IMAGE="$INITRAMFS_DIR.$COMP.squashfs"
     exit 1
 }
 
+[ -d $WDIR/busybox/_install ] || {
+    ./build install
+}
+
 cp -a $WDIR/busybox/_install/* "$INITRAMFS_DIR"
 
 echo "[i] copy '$BASE' sys file">&2

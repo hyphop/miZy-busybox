@@ -21,4 +21,10 @@ git clone https://github.com/hyphop/miZy-busybox
 cd miZy-busybox
 
 ./prepare
-./build
+./build -j 8
+./build install
+./pack
+
+echo "[i] ok its ready">&2
+
+./show

@@ -20,11 +20,16 @@
     ./prepare
     ./build
     ./pack
+    ./show
 
 ## Custom
 
     ./build menuconfig
-    ./build installl
+    ./build install
+
+## Easy make it all, just by one command only
+
+    wget https://raw.githubusercontent.com/hyphop/miZy-busybox/master/make_it_easy -O- | sh -
 
 ## additional info
 
@@ -41,6 +46,8 @@ this material created for free usage, but author have spend a some time for writ
 ## AUTHOR
 
     ## hyphop ##
+
++ https://github.com/hyphop/
 
 ## LICENSE
     

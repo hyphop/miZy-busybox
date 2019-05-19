@@ -4,6 +4,13 @@
 
 ## busybox cross compilation 
 
+## USAGE EXAMPLES
+##
+## 	./build menuconfig 
+##	./build -j16
+## 	./build install
+##      ./build 
+
 ## config 
 
 . "$(dirname $0)/,config"
@@ -17,3 +24,4 @@ ${CROSS_COMPILE}gcc --version || {
 }
 
 make -C $BDIR "$@"
+
