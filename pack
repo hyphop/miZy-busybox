@@ -1,0 +1,40 @@
+#!/bin/sh
+
+## hyphop ##
+
+## prepare and pack initramfs as squashfs
+
+## USAGE EXAMPLE 
+##	COMP=lzma ./pack
+##	COMP=gzip BASE=mizyx ./pack
+
+. "$(dirname $0)/,config"
+
+[ "$BASE" ] || BASE="$1"
+[ "$BASE" ] || BASE="minibbsys"
+[ "$COMP" ] || COMP=lzo
+
+INITRAMFS_DIR="$WDIR/initramfs"
+mkdir -p "$INITRAMFS_DIR"
+
+ROOTFS_IMAGE="$INITRAMFS_DIR.$COMP.squashfs"
+
+[ -f "$ROOTFS_IMAGE" ] && {
+    echo "[w] exist $ROOTFS_IMAGE already">&2
+    exit 1
+}
+
+cp -a $WDIR/busybox/_install/* "$INITRAMFS_DIR"
+
+echo "[i] copy '$BASE' sys file">&2
+
+cp -a files/root/$BASE/* "$INITRAMFS_DIR"
+
+
+echo "[i] pack rootfs ($COMP) > $ROOTFS_IMAGE">&2
+
+
+mksquashfs \
+    "$INITRAMFS_DIR" \
+    $ROOTFS_IMAGE \
+    -comp $COMP

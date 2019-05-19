@@ -22,6 +22,7 @@
 ## CUSTOM
 
     ./build menuconfig
+    ./build installl
 
 ## GET && BUILD
 
