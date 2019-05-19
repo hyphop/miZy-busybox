@@ -3,21 +3,20 @@
 ## hyphop ##
 
 . "$(dirname $0)/,config"
+. "$(dirname $0)/,config.make"
+. "$(dirname $0)/,config.tc"
 
 
 [ -p "$WDIR" ] || mkdir -p $WDIR
 
 cd $WDIR
 
-
 ## download source 
 
 [ -s $PKG ] || {
     echo "[i] get source $SRC => $PKG">&2
-    curl -jkL $SRC -C- -o $PKG
+    curl -jkL "$SRC" -C- -o "$PKG"
 }
-
-echo $CDIR
 
 ## unpack 
 
@@ -31,4 +30,29 @@ echo $CDIR
     echo "[i] copy default config $CDIR/.config">&2
     cp $CDIR/files/$NAME/.config $NAME/.config
 }
+
+
+[ -L $STAGING_DIR ] || {
+    cd $ZDIR
+    ls -l1
+    echo "[i] download tc => $squash_tc_name">&2
+    curl -jkL "$squash_tc_link" -C- -o "$squash_tc_name"
+
+    [ -d $tc_gcc_dir ] || {
+	echo "[i] unpack $squash_tc_name">&2
+	unsquashfs -d "$tc_gcc_dir" $squash_tc_name && {
+	    ln -s $tc_gcc_dir tc
+	}
+    }
+}
+
+## check gcc 
+
+${CROSS_COMPILE}gcc --version 2>/dev/null 1>/dev/null || {
+    echo "[e] tc broken">&2
+    exit 1
+}
+
+echo "[i] OK - we are ready! next step is ./build">&2
+
 
