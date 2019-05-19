@@ -1,0 +1,19 @@
+#!/bin/sh
+
+## hyphop ##
+
+## busybox cross compilation 
+
+## config 
+
+. "$(dirname $0)/,config"
+. "$(dirname $0)/,config.make"
+
+## check gcc 
+
+${CROSS_COMPILE}gcc --version || {
+    echo "[e] tc broken">&2
+    exit 1
+}
+
+make -C $BDIR "$@"

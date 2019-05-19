@@ -1,0 +1,24 @@
+#!/bin/sh
+
+## hyphop ##
+
+## one-line command - easy make 
+
+usage() { echo "USAGE:
+
+    wget https://raw.githubusercontent.com/hyphop/miZy-busybox/master/make_it_easy -O- | sh -
+
+"
+}
+
+[ -p /tmp/zero_builder ] || mkdir -p /tmp/zero_builder
+cd /tmp/zero_builder || exit 1
+
+git clone https://github.com/hyphop/miZy-busybox
+
+##
+
+cd miZy-busybox
+
+./prepare
+./build

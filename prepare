@@ -1,0 +1,34 @@
+#!/bin/sh
+
+## hyphop ##
+
+. "$(dirname $0)/,config"
+
+
+[ -p "$WDIR" ] || mkdir -p $WDIR
+
+cd $WDIR
+
+
+## download source 
+
+[ -s $PKG ] || {
+    echo "[i] get source $SRC => $PKG">&2
+    curl -jkL $SRC -C- -o $PKG
+}
+
+echo $CDIR
+
+## unpack 
+
+[ -d "$PKGD" ] || {
+    echo "[i] unpack $PKG => $NAME-$VER => $NAME">&2
+    tar -xf $PKG
+    ln -s $NAME-$VER $NAME
+}
+
+[ -f $NAME/.config ] || {
+    echo "[i] copy default config $CDIR/.config">&2
+    cp $CDIR/files/$NAME/.config $NAME/.config
+}
+

@@ -1,0 +1,2 @@
+language: c
+script:  sudo ./prepare && sudo ./build
