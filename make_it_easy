@@ -20,8 +20,10 @@ git clone https://github.com/hyphop/miZy-busybox
 
 cd miZy-busybox
 
+set -e
+
 ./prepare
-./build -j 8
+./build -j 8 
 ./build install
 ./pack
 

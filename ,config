@@ -12,4 +12,4 @@ BDIR="$WDIR/$NAME"
 SRV=https://www.busybox.net/downloads/
 SRC="$SRV$PKG"
 CDIR="$(realpath $(dirname $0))"
-
+LOG=log

@@ -8,6 +8,8 @@
 
 
 [ -p "$WDIR" ] || mkdir -p $WDIR
+[ -p "$LOG" ] || mkdir -p $LOG
+
 
 cd $WDIR
 
